@@ -6,14 +6,16 @@
     <title>Final Poster & Reflection</title>
     <style>
         body {
-            background-image: url('a.jpeg');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            margin: 0;
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333; /* Dark gray text color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            text-align: center;
+            background-color: #333; /* Navbar background */
         }
         nav ul li {
             display: inline;
@@ -22,22 +24,44 @@
         nav ul li a {
             color: white;
             text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: #007bff;
         }
         .content {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin: 20px;
+            margin: 20px auto;
             border-radius: 8px;
+            width: 80%;
+            max-width: 1200px;
         }
         .read-more {
-            background-color: white;
-            color: black;
-            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
             text-decoration: none;
             border-radius: 5px;
             cursor: pointer;
+            border: none;
+            display: block;
+            margin-top: 15px;
         }
-        #more {display: none;}
+        .read-more-content {
+            display: none;
+        }
+        .footer {
+            padding: 10px 0;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+        .footer img {
+            height: 50px;
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
@@ -47,7 +71,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="goal-artifact.html">Goal & Artifact</a></li>
-            <li><a href="final-poster-reflection.html">Final Poster & Reflection</a></li>
+            <li><a href="final-poster-reflection.html" class="active">Final Poster & Reflection</a></li>
         </ul>
     </nav>
 </header>
@@ -55,7 +79,7 @@
 <main>
     <div class="content">
         <h1>Final Poster & Reflection</h1>
-        <section>
+         <section>
             <h2>Final Poster</h2>
             <!-- Poster Image Section -->
             <img src="Eposter1.JPG" alt="Final Poster" style="max-width:100%;height:auto;">
@@ -75,6 +99,7 @@ Moving forward, I am committed to applying these insights in shaping a research 
             </p>
             <button onclick="toggleReadMore()" id="myBtn">Read More</button>
         </section>
+        <!-- Content sections for Final Poster and Reflective Essay -->
     </div>
 </main>
 
@@ -95,26 +120,11 @@ function toggleReadMore() {
     }
 }
 </script>
-<style>
-    /* Other styles */
-
-    .footer {
-        padding: 10px 0; /* Adjust top and bottom padding as needed */
-        text-align: center; /* Center the footer content */
-        color: white; /* Example text color */
-    }
-
-    .footer img {
-        height: 50px; /* Set the height of the images */
-        margin: 0 10px; /* Add some horizontal spacing between images */
-    }
-</style>
 
 <footer class="footer">
     <img src="usask.png" alt="Footer Image 1">
-    <img src="inspire.JPG" alt="Footer Image 2" style="align-self: center;">
+    <img src="inspire.JPG" alt="Footer Image 2">
     <img src="cls.png" alt="Footer Image 3">
 </footer>
 </body>
 </html>
-
