@@ -29,18 +29,15 @@
             margin: 20px;
             border-radius: 8px;
         }
-        .read-more, .read-less {
+        .read-more {
             background-color: white;
             color: black;
             padding: 10px;
             text-decoration: none;
             border-radius: 5px;
             cursor: pointer;
-            display: inline-block;
         }
-        .hidden {
-            display: none;
-        }
+        #more {display: none;}
     </style>
 </head>
 <body>
@@ -65,26 +62,29 @@
         </section>
         <section>
             <h2>Reflection</h2>
-            <!-- Example Reflection Content with a Read More Button -->
-            <p id="reflection-summary">Here, you would detail your reflections on the project, what you learned, challenges faced, and how you overcame them. This reflective essay can be a powerful tool for personal growth and showcasing your problem-solving abilities.</p>
-            <span id="more-text" class="hidden"> The rest of your reflection text goes here, continuing the story from the point where the summary ends. This part will be shown after clicking "Read More".</span>
-            <span class="read-more" onclick="showMore()">Read More</span>
-            <span class="read-less hidden" onclick="showLess()">Read Less</span>
+            <p id="reflection">
+                Here, you would detail your reflections on the project, what you learned, challenges faced, and how you overcame them. This reflective essay can be a powerful tool for personal growth and showcasing your problem-solving abilities. <span id="dots">...</span><span id="more">The rest of your reflection text goes here, continuing the story from the point where the summary ends. This part will be shown after clicking "Read More".</span>
+            </p>
+            <button onclick="toggleReadMore()" id="myBtn">Read More</button>
         </section>
     </div>
 </main>
 
 <script>
-function showMore() {
-    document.getElementById('more-text').classList.remove('hidden');
-    document.querySelector('.read-more').classList.add('hidden');
-    document.querySelector('.read-less').classList.remove('hidden');
-}
+function toggleReadMore() {
+    var moreText = document.getElementById("more");
+    var dots = document.getElementById("dots");
+    var btnText = document.getElementById("myBtn");
 
-function showLess() {
-    document.getElementById('more-text').classList.add('hidden');
-    document.querySelector('.read-more').classList.remove('hidden');
-    document.querySelector('.read-less').classList.add('hidden');
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read More"; 
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read Less"; 
+        moreText.style.display = "inline";
+    }
 }
 </script>
 </body>
