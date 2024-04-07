@@ -7,22 +7,25 @@
     <title>Home</title>
     <style>
         body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Viewport Height */
-    margin: 0; /* Remove default margin */
-    background-color: #283593; /* Dark blue background */
-    color: #FFFFFF; /* White text color */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #283593; /* Dark blue background */
+            color: #FFFFFF; /* White text color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Viewport height */
         }
         .content {
-    width: 80%; /* or any specific width you prefer */
-    max-width: 1200px; /* Maximum width of the content */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the content */
-    padding: 20px;
-    border-radius: 8px;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            width: 80%;
+            max-width: 1200px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the content */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-sizing: border-box;
         }
         .slideshow-container {
             max-width: 1000px;
@@ -43,6 +46,7 @@
         nav ul {
             list-style-type: none;
             padding: 0;
+            text-align: center;
         }
         nav ul li {
             display: inline;
@@ -54,6 +58,7 @@
         }
         .profile-links {
             margin-top: 20px;
+            text-align: center;
         }
         .profile-links a {
             background-color: #007bff;
@@ -61,6 +66,15 @@
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
+        }
+        .footer {
+            padding: 10px 0;
+            text-align: center;
+            background-color: #333333; /* Dark footer background */
+        }
+        .footer img {
+            height: 50px;
+            margin: 0 10px;
         }
     </style>
 </head>
@@ -77,10 +91,12 @@
     </nav>
 </header>
 
-<main>
-    <div class="content">
-        <h1>Slideshow of images highlighting key moments</h1>
-        <div class="slideshow-container">
+<div class="container">
+    <main>
+        <div class="content">
+            <h1>Welcome to My Homepage</h1>
+            <div class="slideshow-container">
+                <div class="slideshow-container">
             <div class="mySlides fade">
                 <img src="Eposter.JPG" style="width:100%">
             </div>
@@ -120,13 +136,21 @@
             <div class="mySlides fade">
                 <img src="img9.jpg" style="width:100%">
             </div>
- 
-        <div class="profile-links">
-            <a href="https://www.linkedin.com/in/peter-ufondu-43a085160/" target="_blank">LinkedIn Profile</a>
-            <a href="https://research-groups.usask.ca/beamteam/member-profiles/peter-ufondu.php" target="_blank">Beamteam Profile</a>
+                <!-- More slide divs -->
+            </div>
+            <div class="profile-links">
+                <a href="https://www.linkedin.com/in/peter-ufondu-43a085160/" target="_blank">LinkedIn Profile</a>
+                <a href="https://research-groups.usask.ca/beamteam/member-profiles/peter-ufondu.php" target="_blank">Beamteam Profile</a>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
+</div>
+
+<footer class="footer">
+    <img src="usask.png" alt="Footer Image 1">
+    <img src="inspire.JPG" alt="Footer Image 2">
+    <img src="cls.png" alt="Footer Image 3">
+</footer>
 
 <script>
 let slideIndex = 0;
@@ -144,25 +168,5 @@ function showSlides() {
     setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 </script>
-<style>
-    /* Other styles */
-
-    .footer {
-        padding: 10px 0; /* Adjust top and bottom padding as needed */
-        text-align: center; /* Center the footer content */
-        color: white; /* Example text color */
-    }
-
-    .footer img {
-        height: 50px; /* Set the height of the images */
-        margin: 0 10px; /* Add some horizontal spacing between images */
-    }
-</style>
-
-<footer class="footer">
-    <img src="usask.png" alt="Footer Image 1">
-    <img src="inspire.JPG" alt="Footer Image 2" style="align-self: center;">
-    <img src="cls.png" alt="Footer Image 3">
-</footer>
 </body>
 </html>
