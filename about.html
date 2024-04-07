@@ -222,18 +222,19 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";
 }
 
-function toggleReadMore(section, event) {
+function toggleReadMore(section) {
     var moreText = document.getElementById("more-" + section);
-    var btnText = event.target;
+    var btnText = document.querySelector('.read-more[onclick="toggleReadMore(\'' + section + '\')"]');
 
-    if (moreText.style.display === "none" || moreText.style.display === "") {
-        btnText.textContent = "Read Less"; 
-        moreText.style.display = "inline";
+    if (moreText.style.display === "none") {
+        moreText.style.display = "block";
+        btnText.innerHTML = "Read Less";
     } else {
-        btnText.textContent = "Read More"; 
         moreText.style.display = "none";
+        btnText.innerHTML = "Read More";
     }
 }
+
 
 
 
