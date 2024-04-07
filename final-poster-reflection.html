@@ -29,13 +29,17 @@
             margin: 20px;
             border-radius: 8px;
         }
-        .read-more {
+        .read-more, .read-less {
             background-color: white;
             color: black;
             padding: 10px;
             text-decoration: none;
             border-radius: 5px;
+            cursor: pointer;
             display: inline-block;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -62,11 +66,27 @@
         <section>
             <h2>Reflection</h2>
             <!-- Example Reflection Content with a Read More Button -->
-            <p>Here, you would detail your reflections on the project, what you learned, challenges faced, and how you overcame them. This reflective essay can be a powerful tool for personal growth and showcasing your problem-solving abilities.<!-- Display the first 50 words -->...</p>
-            <a href="full-reflection.html" class="read-more">Read More</a>
+            <p id="reflection-summary">Here, you would detail your reflections on the project, what you learned, challenges faced, and how you overcame them. This reflective essay can be a powerful tool for personal growth and showcasing your problem-solving abilities.</p>
+            <span id="more-text" class="hidden"> The rest of your reflection text goes here, continuing the story from the point where the summary ends. This part will be shown after clicking "Read More".</span>
+            <span class="read-more" onclick="showMore()">Read More</span>
+            <span class="read-less hidden" onclick="showLess()">Read Less</span>
         </section>
     </div>
 </main>
+
+<script>
+function showMore() {
+    document.getElementById('more-text').classList.remove('hidden');
+    document.querySelector('.read-more').classList.add('hidden');
+    document.querySelector('.read-less').classList.remove('hidden');
+}
+
+function showLess() {
+    document.getElementById('more-text').classList.add('hidden');
+    document.querySelector('.read-more').classList.remove('hidden');
+    document.querySelector('.read-less').classList.add('hidden');
+}
+</script>
 <footer class="footer">
     <img src="footer-img1.jpg" alt="Footer Image 1">
     <img src="footer-img2.jpg" alt="Footer Image 2" style="align-self: center;">
