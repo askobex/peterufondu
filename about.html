@@ -6,14 +6,16 @@
     <title>About</title>
     <style>
         body {
-            background-image: url('a.jpeg');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            background-color: #333;
+            text-align: center;
         }
         nav ul li {
             display: inline;
@@ -22,42 +24,50 @@
         nav ul li a {
             color: white;
             text-decoration: none;
+            padding: 10px 15px;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #007bff;
         }
         .content {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin: 20px;
+            margin: 20px auto;
             border-radius: 8px;
+            width: 80%;
+            max-width: 1200px;
         }
-       .profile-pic {
-    float: left;
-    margin-right: 20px;
-    width: 200px;  /* Width of passport size photo */
-    height: 200px; /* Height of passport size photo */
-    object-fit: cover; /* Ensures the image is scaled correctly within the specified dimensions */
-    border-radius: 50%; /* Optional: creates a round shape */
-}
+        .profile-pic {
+            float: left;
+            margin-right: 20px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
         .clear {
             clear: both;
         }
         .read-more {
+            background-color: #007bff;
             color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
             cursor: pointer;
-            text-decoration: underline;
+            display: inline-block;
+            margin-top: 10px;
         }
         #more-bio, #more-mission, #more-vitae { display: none; }
-        /* Slideshow container */
         .slideshow-container {
             max-width: 100%;
             position: relative;
             margin: auto;
         }
-        /* Slides */
         .mySlides {
             display: none;
             text-align: center;
         }
-        /* Next & previous buttons */
         .prev, .next {
             cursor: pointer;
             position: absolute;
@@ -72,12 +82,10 @@
             border-radius: 0 3px 3px 0;
             user-select: none;
         }
-        /* Position the "next button" to the right */
         .next {
             right: 0;
             border-radius: 3px 0 0 3px;
         }
-        /* Caption text */
         .text {
             color: #f2f2f2;
             font-size: 15px;
@@ -87,6 +95,16 @@
             width: 100%;
             text-align: center;
         }
+        .footer {
+            padding: 10px 0;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+        .footer img {
+            height: 50px;
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
@@ -94,7 +112,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html" class="active">About</a></li>
             <li><a href="goal-artifact.html">Goal & Artifact</a></li>
             <li><a href="final-poster-reflection.html">Final Poster & Reflection</a></li>
         </ul>
@@ -281,69 +299,53 @@ In every endeavor, I am guided by a vision of a world where scientific discovery
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </section>
+        <!-- Biography, Mission Statement, and other sections here -->
     </div>
 </main>
 
 <script>
+function toggleReadMore(section) {
+    var moreText = document.getElementById("more-" + section);
+    var dots = document.getElementById("dots-" + section);
+    var btnText = document.querySelector('.read-more[onclick="toggleReadMore(\'' + section + '\')"]');
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read More"; 
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read Less"; 
+        moreText.style.display = "inline";
+    }
+}
+
 var slideIndex = 1;
 showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
 
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slides[slideIndex-1].style.display = "block";
 }
 
-function toggleReadMore(section) {
-    var moreText = document.getElementById("more-" + section);
-    var btnText = document.querySelector('.read-more[onclick="toggleReadMore(\'' + section + '\')"]');
-
-    if (moreText.style.display === "none") {
-        moreText.style.display = "block";
-        btnText.innerHTML = "Read Less";
-    } else {
-        moreText.style.display = "none";
-        btnText.innerHTML = "Read More";
-    }
+function plusSlides(n) {
+    showSlides(slideIndex += n);
 }
 
-
-
-
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
 </script>
-<style>
-    /* Other styles */
-
-    .footer {
-        padding: 10px 0; /* Adjust top and bottom padding as needed */
-        text-align: center; /* Center the footer content */
-        color: white; /* Example text color */
-    }
-
-    .footer img {
-        height: 50px; /* Set the height of the images */
-        margin: 0 10px; /* Add some horizontal spacing between images */
-    }
-</style>
 
 <footer class="footer">
     <img src="usask.png" alt="Footer Image 1">
-    <img src="inspire.JPG" alt="Footer Image 2" style="align-self: center;">
+    <img src="inspire.JPG" alt="Footer Image 2">
     <img src="cls.png" alt="Footer Image 3">
 </footer>
 </body>
