@@ -30,6 +30,13 @@
             margin: 20px;
             border-radius: 8px;
         }
+        .read-more-content {
+            display: none;
+        }
+        .read-more {
+            color: lightblue;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -48,8 +55,38 @@
     <div class="content">
         <h1>Welcome to My Homepage</h1>
         <p>This is where you'll find a slideshow of images highlighting key moments or aspects. Remember to implement the slideshow functionality with JavaScript and/or a library like SwiperJS for dynamic content.</p>
+
+        <h2>SMART GOALS</h2>
+        <p>Details about SMART Goals here. SMART stands for Specific, Measurable, Achievable, Relevant, and Time-bound.<span class="read-more" onclick="toggleReadMore('smart-goals')">Read More</span></p>
+        <div class="read-more-content" id="smart-goals">
+            <p>Extended information about SMART Goals...</p>
+        </div>
+
+        <h2>INDIVIDUAL DEVELOPMENT PLAN (IDP)</h2>
+        <p>Information on the Individual Development Plan. This section can include goals, timelines, and strategies for personal and professional growth.<span class="read-more" onclick="toggleReadMore('idp')">Read More</span></p>
+        <div class="read-more-content" id="idp">
+            <p>More details on Individual Development Plan...</p>
+        </div>
+
+        <h2>Reflective Essay</h2>
+        <p>A reflective essay discussing experiences, learnings, and personal development.<span class="read-more" onclick="toggleReadMore('reflective-essay')">Read More</span></p>
+        <div class="read-more-content" id="reflective-essay">
+            <p>Detailed reflective essay content...</p>
+        </div>
     </div>
 </main>
+
+<script>
+    function toggleReadMore(sectionId) {
+        var content = document.getElementById(sectionId);
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    }
+</script>
+
 <footer class="footer">
     <img src="footer-img1.jpg" alt="Footer Image 1">
     <img src="footer-img2.jpg" alt="Footer Image 2" style="align-self: center;">
