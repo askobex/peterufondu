@@ -77,18 +77,60 @@
             margin: 0 10px;
         }
     </style>
+    <style>
+    /* Other styles... */
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+        background-color: #444; /* Dark background for the navbar */
+        overflow: hidden; /* Ensure the menu doesn't affect surrounding layout */
+    }
+
+    nav ul li {
+        display: inline-block; /* Align items horizontally */
+    }
+
+    nav ul li a {
+        display: block; /* Make the entire area clickable */
+        color: white;
+        text-decoration: none;
+        padding: 14px 20px; /* Add some padding for clickable area */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+        background-color: #007bff; /* Highlight color for hover and active state */
+    }
+
+    /* Add a class to the active/current link item */
+    .active {
+        background-color: #666; /* Darker background for the active menu item */
+        color: #fff; /* White text for contrast */
+    }
+
+    /* Responsive adjustments (if needed) */
+    @media (max-width: 600px) {
+        nav ul li {
+            display: block; /* Stack the links vertically on small screens */
+        }
+    }
+</style>
+
 </head>
 <body>
 
 <header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="goal-artifact.html">Goal & Artifact</a></li>
-            <li><a href="final-poster-reflection.html">Final Poster & Reflection</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="goal-artifact.html">Goal & Artifact</a></li>
+        <li><a href="final-poster-reflection.html">Final Poster & Reflection</a></li>
+    </ul>
+</nav>
+
 </header>
 
 <div class="container">
