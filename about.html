@@ -260,6 +260,7 @@ In every aspect of my life, I am driven by a deep-seated curiosity and a commitm
 
         </div>
         <span class="read-more" onclick="toggleReadMore('vitae')">Read More</span>
+
     </div>
 </section>
 
@@ -305,14 +306,14 @@ function toggleReadMore(section) {
     var moreText = document.getElementById("more-" + section);
     var btnText = document.querySelector('.read-more[onclick="toggleReadMore(\'' + section + '\')"]');
 
-    if (dots.style.display === "none") {
+    if (moreText.style.display === "none") {
         dots.style.display = "inline";
-        moreText.style.display = "none";
         btnText.innerHTML = "Read More";
+        moreText.style.display = "none";
     } else {
         dots.style.display = "none";
-        moreText.style.display = "inline";
         btnText.innerHTML = "Read Less";
+        moreText.style.display = "inline";
     }
 }
 
