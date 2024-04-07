@@ -301,43 +301,36 @@ In every aspect of my life, I am driven by a deep-seated curiosity and a commitm
 
 <script>
 function toggleReadMore(section) {
-    var moreText = document.getElementById("more-" + section);
     var dots = document.getElementById("dots-" + section);
+    var moreText = document.getElementById("more-" + section);
     var btnText = document.querySelector('.read-more[onclick="toggleReadMore(\'' + section + '\')"]');
 
     if (dots.style.display === "none") {
         dots.style.display = "inline";
-        btnText.innerHTML = "Read More"; 
         moreText.style.display = "none";
+        btnText.innerHTML = "Read More";
     } else {
         dots.style.display = "none";
-        btnText.innerHTML = "Read Less"; 
         moreText.style.display = "inline";
+        btnText.innerHTML = "Read Less";
     }
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex = 0;
+showSlides();
 
-function showSlides(n) {
-    var i;
+function showSlides() {
     var slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
+    for (var i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    slides[slideIndex-1].style.display = "block";
-}
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 </script>
+
 
 <footer class="footer">
     <img src="usask.png" alt="Footer Image 1">
