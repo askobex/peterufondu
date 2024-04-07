@@ -7,10 +7,23 @@
     <title>Home</title>
     <style>
         body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Viewport Height */
+    margin: 0; /* Remove default margin */
     background-color: #283593; /* Dark blue background */
-    color: #FFFFFF; /* White text color for contrast */
+    color: #FFFFFF; /* White text color */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        }
+        .content {
+    width: 80%; /* or any specific width you prefer */
+    max-width: 1200px; /* Maximum width of the content */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the content */
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
         .slideshow-container {
             max-width: 1000px;
             position: relative;
@@ -38,12 +51,6 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-        }
-        .content {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 8px;
         }
         .profile-links {
             margin-top: 20px;
