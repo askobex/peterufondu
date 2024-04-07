@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <style>
@@ -11,9 +10,6 @@
             background-size: cover;
             background-position: center;
             color: white;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
         nav ul {
             list-style-type: none;
@@ -37,18 +33,18 @@
             float: left;
             margin-right: 20px;
         }
-        .footer {
-            display: flex;
-            justify-content: space-between;
+        .clear {
+            clear: both;
+        }
+        .read-more, .read-less {
+            background-color: white;
+            color: black;
             padding: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            margin: 20px;
-            border-radius: 8px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .footer img {
-            width: 100px; /* Adjust based on your needs */
-            height: auto;
-        }
+        #more-bio, #more-mission {display: none;}
     </style>
 </head>
 <body>
@@ -69,29 +65,42 @@
         <img src="b.png" alt="Profile Picture" class="profile-pic">
         <section>
             <h2>Bio</h2>
-            <p>Here's a short bio about me. [Insert your bio here]</p>
+            <p id="bio">Here's a short bio about me. [Insert the first part of your bio here]<span id="dots-bio">...</span><span id="more-bio"> [Insert the remaining part of your bio here]</span></p>
+            <button onclick="toggleReadMore('bio')">Read More</button>
         </section>
         <div class="clear"></div>
         <section>
             <h2>Mission Statement</h2>
-            <p>This is my mission statement. [Insert your mission statement here]</p>
+            <p id="mission">This is my mission statement. [Insert the first part of your mission statement here]<span id="dots-mission">...</span><span id="more-mission"> [Insert the remaining part of your mission statement here]</span></p>
+            <button onclick="toggleReadMore('mission')">Read More</button>
         </section>
         <section>
             <h2>VIA Strength</h2>
-            <p><a href="VIA-strength.pdf" target="_blank">View VIA Strength PDF</a></p>
+            <p>Summary of VIA Strengths or a brief overview. For more details, please [insert a call to action, such as contacting you or visiting a specific page].</p>
         </section>
         <section>
             <h2>Vitae</h2>
-            <p><a href="your-vitae.pdf" target="_blank">View Vitae PDF</a></p>
+            <p>A brief overview of my professional vitae. For a detailed view, please [insert a call to action, such as contacting you or visiting a specific page].</p>
         </section>
     </div>
 </main>
 
-<footer class="footer">
-    <img src="footer-img1.jpg" alt="Footer Image 1">
-    <img src="footer-img2.jpg" alt="Footer Image 2" style="align-self: center;">
-    <img src="footer-img3.jpg" alt="Footer Image 3">
-</footer>
+<script>
+function toggleReadMore(section) {
+    var dots = document.getElementById("dots-" + section);
+    var moreText = document.getElementById("more-" + section);
+    var btnText = document.querySelector([onclick="toggleReadMore('${section}')"]);
 
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read More"; 
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read Less"; 
+        moreText.style.display = "inline";
+    }
+}
+</script>
 </body>
 </html>
