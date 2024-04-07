@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Goal & Artifact</title>
     <style>
         body {
-            background-image: url('a.jpeg');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            background-color: #f0f0f0; /* Changed background to a light color for contrast */
+            color: #333; /* Dark text for readability */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            text-align: center;
+            background-color: #333; /* Dark background for the navbar */
         }
         nav ul li {
             display: inline;
@@ -23,19 +24,40 @@
         nav ul li a {
             color: white;
             text-decoration: none;
+            padding: 10px 15px; /* Added padding for better click area */
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #007bff; /* Highlight color for hover and active state */
         }
         .content {
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            background: rgba(0, 0, 0, 0.05); /* Light semi-transparent background */
             padding: 20px;
-            margin: 20px;
+            margin: 20px auto; /* Centered with automatic horizontal margins */
             border-radius: 8px;
+            max-width: 80%; /* Limit content width */
+        }
+        .goal-artifact-section {
+            background-color: #ddd; /* Slightly darker background for this section */
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .read-more {
+            color: #007bff;
+            cursor: pointer;
         }
         .read-more-content {
             display: none;
         }
-        .read-more {
-            color: lightblue;
-            cursor: pointer;
+        .footer {
+            padding: 10px 0;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+        .footer img {
+            height: 50px;
+            margin: 0 10px;
         }
     </style>
 </head>
@@ -45,7 +67,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="goal-artifact.html">Goal & Artifact</a></li>
+            <li><a href="goal-artifact.html" class="active">Goal & Artifact</a></li>
             <li><a href="final-poster-reflection.html">Final Poster & Reflection</a></li>
         </ul>
     </nav>
@@ -53,10 +75,10 @@
 
 <main>
     <div class="content">
-        <h1>GOALS AND ARTEFACTS</h1>
-
-        <h2>SMART GOALS</h2>
-<p>
+        <div class="goal-artifact-section">
+            <h1>GOALS AND ARTEFACTS</h1>
+            <h2>SMART GOALS</h2>
+            <p>
     <strong>1. Master the use of synchrotron soft X-ray techniques for analyzing advanced materials.</strong><br>
     Measurable: Complete at least three advanced workshops by the end of the year.<br>
     Achievable: Identify and attend workshops offered by research facilities.<br>
@@ -162,8 +184,9 @@
         This IDP is a dynamic document and will be updated annually to reflect Peter Ufondu’s progress,
         changes in research focus, and emerging opportunities in the field of advanced materials research.
     </p>
-</div>
-
+            <!-- More content here -->
+        </div>
+    </div>
 </main>
 
 <script>
@@ -176,20 +199,6 @@
         }
     }
 </script>
-<style>
-    /* Other styles */
-
-    .footer {
-        padding: 10px 0; /* Adjust top and bottom padding as needed */
-        text-align: center; /* Center the footer content */
-        color: white; /* Example text color */
-    }
-
-    .footer img {
-        height: 50px; /* Set the height of the images */
-        margin: 0 10px; /* Add some horizontal spacing between images */
-    }
-</style>
 
 <footer class="footer">
     <img src="usask.png" alt="Footer Image 1">
