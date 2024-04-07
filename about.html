@@ -130,13 +130,13 @@
 Our home is filled with the joy and curiosity of our children, Zois and Zoia. As a father, I strive to inspire them with the wonders of the natural world and the importance of scientific inquiry. They remind me daily of the broader impact of my work and the legacy I hope to build.
 
 In every aspect of my life, I am driven by a deep-seated curiosity and a commitment to excellence, seeking not only to advance my field but also to contribute to a better understanding of the world for the next generation.</span></p>
-<span class="read-more" onclick="toggleReadMore('bio', event)">Read More</span>
+<span class="read-more" onclick="toggleReadMore('bio')">Read More</span>
         </section>
         <div class="clear"></div>
         <section>
             <h2>Mission Statement</h2>
             <p>My mission is to be a catalyst for change, advancing not only my field but also contributing to a better, more informed, and sustainable world.<span id="dots-mission">...</span><span id="more-mission"> I value collaboration, integrity, and the pursuit of excellence. Beyond my academic and professional goals, I strive to inspire the next generation of scientists. I seek to demonstrate that perseverance, creativity, and a collaborative spirit can lead to discoveries that change our understanding of the world. My mission extends to my personal life, where I am to live consciously and sustainably, respecting the intricate balance of our ecosystem.</span></p>
-            <span class="read-more" onclick="toggleReadMore('mission', event)">Read More</span>
+            <span class="read-more" onclick="toggleReadMore('mission')">Read More</span>
         </section>
 <section>
 <section>
@@ -144,8 +144,7 @@ In every aspect of my life, I am driven by a deep-seated curiosity and a commitm
     <div class="vitae-section">
         <h3>PROFILE</h3>
         <p>
-            Motivated, confident with extensive knowledge of research. Exceptional communicator with advanced writing, testing, and problem-solving skills. Dependable, organized and calm under pressure. Having exceptional multitasking and organizational skills, all of which are imperative when working closely with co-workers or other research professionals.
-        </p>
+            Motivated, confident with extensive knowledge of research. Exceptional communicator with advanced writing, testing, and problem-solving skills. Dependable, organized and calm under pressure. Having exceptional multitasking and organizational skills, all of which are imperative when working closely with co-workers or other research professionals.<span id="dots-vitae">...</span>
         <div id="more-vitae" style="display: none;">
             <h2>PROFESSIONAL CERTIFICATES</h2>
     <ul>
@@ -259,6 +258,7 @@ In every aspect of my life, I am driven by a deep-seated curiosity and a commitm
 </ul>
 
         </div>
+    </p>
         <span class="read-more" onclick="toggleReadMore('vitae')">Read More</span>
 
     </div>
@@ -307,15 +307,16 @@ function toggleReadMore(section) {
     var btnText = document.querySelector('.read-more[onclick="toggleReadMore(\'' + section + '\')"]');
 
     if (moreText.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Read More";
-        moreText.style.display = "none";
-    } else {
         dots.style.display = "none";
-        btnText.innerHTML = "Read Less";
         moreText.style.display = "inline";
+        btnText.innerHTML = "Read Less";
+    } else {
+        dots.style.display = "inline";
+        moreText.style.display = "none";
+        btnText.innerHTML = "Read More";
     }
 }
+
 
 var slideIndex = 0;
 showSlides();
