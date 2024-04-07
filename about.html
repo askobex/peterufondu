@@ -36,15 +36,53 @@
         .clear {
             clear: both;
         }
-        .read-more, .read-less {
-            background-color: white;
-            color: black;
-            padding: 10px;
-            text-decoration: none;
-            border-radius: 5px;
+        .read-more {
+            color: white;
             cursor: pointer;
+            text-decoration: underline;
         }
-        #more-bio, #more-mission {display: none;}
+        #more-bio, #more-mission, #more-vitae { display: none; }
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+        /* Slides */
+        .mySlides {
+            display: none;
+            text-align: center;
+        }
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -65,27 +103,69 @@
         <img src="b.png" alt="Profile Picture" class="profile-pic">
         <section>
             <h2>Bio</h2>
-            <p id="bio">Here's a short bio about me. [Insert the first part of your bio here]<span id="dots-bio">...</span><span id="more-bio"> [Insert the remaining part of your bio here]</span></p>
-            <button onclick="toggleReadMore('bio')">Read More</button>
+            <p>Here's a short bio about me. [Insert the first part of your bio here]<span id="dots-bio">...</span><span id="more-bio"> [Insert the remaining part of your bio here]</span></p>
+            <span class="read-more" onclick="toggleReadMore('bio')">Read More</span>
         </section>
         <div class="clear"></div>
         <section>
             <h2>Mission Statement</h2>
-            <p id="mission">This is my mission statement. [Insert the first part of your mission statement here]<span id="dots-mission">...</span><span id="more-mission"> [Insert the remaining part of your mission statement here]</span></p>
-            <button onclick="toggleReadMore('mission')">Read More</button>
-        </section>
-        <section>
-            <h2>VIA Strength</h2>
-            <p>Summary of VIA Strengths or a brief overview. For more details, please [insert a call to action, such as contacting you or visiting a specific page].</p>
+            <p>This is my mission statement. [Insert the first part of your mission statement here]<span id="dots-mission">...</span><span id="more-mission"> [Insert the remaining part of your mission statement here]</span></p>
+            <span class="read-more" onclick="toggleReadMore('mission')">Read More</span>
         </section>
         <section>
             <h2>Vitae</h2>
-            <p>A brief overview of my professional vitae. For a detailed view, please [insert a call to action, such as contacting you or visiting a specific page].</p>
+            <p>A brief overview of my professional vitae. [Insert the first part of your vitae here]<span id="dots-vitae">...</span><span id="more-vitae"> [Insert the remaining part of your vitae here]</span></p>
+            <span class="read-more" onclick="toggleReadMore('vitae')">Read More
+</span>
+        </section>
+        <section>
+            <h2>VIA Strength</h2>
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides">
+                    <img src="via-image1.jpg" style="width:100%">
+                    <div class="text">VIA</div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="via-image2.jpg" style="width:100%">
+                    <div class="text">16 Strengths</div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
         </section>
     </div>
 </main>
 
 <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+}
+
 function toggleReadMore(section) {
     var dots = document.getElementById("dots-" + section);
     var moreText = document.getElementById("more-" + section);
