@@ -104,7 +104,7 @@
         <section>
             <h2>Bio</h2>
             <p>Here's a short bio about me. [Insert the first part of your bio here]<span id="dots-bio">...</span><span id="more-bio"> [Insert the remaining part of your bio here]</span></p>
-            <span class="read-more" onclick="toggleReadMore('bio')">Read More</span>
+            <span class="read-more" onclick="toggleReadMore('bio', event)">Read More</span>
         </section>
         <div class="clear"></div>
         <section>
@@ -114,7 +114,7 @@
 Beyond my academic and professional goals, I strive to inspire the next generation of scientists. I seek to demonstrate that perseverance, creativity, and a collaborative spirit can lead to discoveries that change our understanding of the world. My mission extends to my personal life, where I aim to live consciously and sustainably, respecting the intricate balance of our ecosystem.
 
 In every endeavor, I am guided by a vision of a world where scientific discovery and technological innovation work hand in hand with environmental stewardship and social responsibility. My mission is to be a catalyst for change, advancing not only my field but also contributing to a better, more informed, and sustainable world.</span></p>
-            <span class="read-more" onclick="toggleReadMore('mission')">Read More</span>
+            <span class="read-more" onclick="toggleReadMore('mission', event)">Read More</span>
         </section>
         <section>
     <h2>Vitae</h2>
@@ -171,7 +171,7 @@ In every endeavor, I am guided by a vision of a world where scientific discovery
             <li>Federal University of Technology Owerri, Nigeria | Bachelors in Physics. September 2004 – September 2009.</li>
         </ul>
     </div>
-    <span class="read-more" onclick="toggleReadMore('vitae')">Read More</span>
+    <span class="read-more" onclick="toggleReadMore('vitae', event)">Read More</span>
 </section>
 </span>
         </section>
@@ -231,10 +231,10 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";
 }
 
-function toggleReadMore(section) {
+function toggleReadMore(section, event) {
     var dots = document.getElementById("dots-" + section);
     var moreText = document.getElementById("more-" + section);
-    var btnText = document.querySelector([onclick="toggleReadMore('${section}')"]);
+    var btnText = event.target;
 
     if (dots.style.display === "none") {
         dots.style.display = "inline";
@@ -246,6 +246,7 @@ function toggleReadMore(section) {
         moreText.style.display = "inline";
     }
 }
+
 </script>
 </body>
 </html>
